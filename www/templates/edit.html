@@ -1,0 +1,45 @@
+<ion-view view-title="MINHA CONTA" id="login">
+  <ion-header-bar>
+    <button class="button button-icon icon ion-android-arrow-back back-icon"></button>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+    <form name="loginForm" ng-submit="editAlert()" novalidate>
+
+      <img src="img/anon.jpg" class="edit-avatar" ng-click="showAvatar()">
+
+      <div class="list">
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Nome</span>
+            <input type="text" placeholder="Nome" name="name" ng-model="editData.nome" ng-minlength="3" ng-maxlength="15" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">E-mail</span>
+            <input type="email" placeholder="E-mail" name="email" ng-model="editData.user" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Senha</span>
+            <input type="password" placeholder="Senha" ng-model="editData.senha1" ng-minlength="3" ng-maxlength="10" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Confirmar senha</span>
+            <input type="password" placeholder="Confirmar senha" ng-model="editData.senha2" ng-minlength="3" ng-maxlength="10" required>
+        </label>
+      </div>
+    </form>
+
+    <div class="row edit-row">
+        <div class="col">
+          <button class="button button-block cancel-button" ng-click="home()">Cancelar</button>
+        </div>
+        <div class="col">
+          <button class="button button-block button-positive" ng-click="editAlert()">Salvar</button>
+        </div>
+      </div>
+
+    <div class="row button-row" style="padding: 7px;">
+        <button class="button button-block alt-flux-button" ng-click="showDelete()">Deletar conta</button>
+    </div>
+
+  </ion-content>
+</ion-view>

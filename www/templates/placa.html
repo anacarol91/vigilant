@@ -1,0 +1,17 @@
+<p class="popup-text">Insira a placa do seu veículo!</p>
+
+<div class="list">
+	<div class="item item-checkbox">
+       Não possuo um veículo
+       <label class="checkbox checkbox-adjust" style="margin-top: -17px !important;">
+       <input type="checkbox" ng-model="editData.semCarro">
+       </label>
+    </div>
+	<label class="item item-input" ng-if="!editData.semCarro">
+	    <input type="text" placeholder="XXX-9999" name="placa" ng-model="editData.placa" ng-minlength="8" ng-maxlength="8" required  style="padding-left: 10px;">
+	</label>
+</div>
+
+<button class="button popup-cancel" ng-click="closePlaca()">Cancelar</button>
+
+<button class="button button-positive popup-ok" ng-click="placaAlert()">Salvar</button>

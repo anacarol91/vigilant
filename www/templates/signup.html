@@ -1,0 +1,38 @@
+<ion-view view-title="CADASTRO" id="login">
+  <ion-header-bar>
+    <button class="button button-icon icon ion-android-arrow-back back-icon" ng-click="myGoBack()"></button>
+    <h1 class="title">CADASTRO</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+    <form name="loginForm" ng-submit="showPlaca()" novalidate>
+      <div class="list">
+      <label class="item item-input item-floating-label">
+            <span class="input-label">Nome</span>
+            <input type="text" placeholder="Nome" name="name" ng-model="loginData.name" ng-minlength="3" ng-maxlength="15" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">E-mail</span>
+            <input type="email" placeholder="E-mail" name="email" ng-model="loginData.email" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Senha</span>
+            <input type="password" placeholder="Senha" ng-model="loginData.password1" ng-minlength="3" ng-maxlength="10" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Confirmar senha</span>
+            <input type="password" placeholder="Confirmar senha" ng-model="loginData.password2" ng-minlength="3" ng-maxlength="10" required>
+        </label>
+        <div class="item item-checkbox">
+           <span>Li e concordo com os <a>Termos de Uso</a> e <a>Política de Privacidade</a>.</span>
+           <label class="checkbox checkbox-adjust">
+           <input type="checkbox">
+           </label>
+        </div>
+      </div>
+
+      <button class="button button-block login-button" type="submit">Cadastrar</button>
+    </form>
+
+  </ion-content>
+</ion-view>

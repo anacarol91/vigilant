@@ -1,0 +1,117 @@
+/* event card */
+
+$event-card-shadow: 0 2px 1px 0 #d6d6d6;
+$event-card-background: #fff;
+$event-card-height: 70px;
+$event-card-margin: 10px 5px;
+$event-card-shadow-click: 0 2px 6px 2px #d6d6d6;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+      -ms-box-shadow: $shadow;
+       -o-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+     -moz-transform: $transform;
+      -ms-transform: $transform;
+       -o-transform: $transform;
+          transform: $transform;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin transition-delay($delay) {
+  -webkit-transition-delay: $delay;
+     -moz-transition-delay: $delay;
+      -ms-transition-delay: $delay;
+       -o-transition-delay: $delay;
+          transition-delay: $delay;
+}
+
+.card-basic {
+	@extend .cancel-border;
+	@include border-radius(4px);
+	@include transform(translate3d(0,0,0));
+	@include transition-delay(.5s);
+	@include transition(transform .15s);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.180392);
+}
+
+.cancel-border {
+	border: none !important;
+	border-color: transparent !important;
+}
+
+#card-list {
+
+	animation: fade-out 0.5s !important;
+	transition-property: display;
+ 	transition-delay: 0s;
+ 	transition-timing-function: ease-out;
+
+	.card {
+		@extend .card-basic;
+		@include box-shadow($event-card-shadow);
+		background-color: $event-card-background;
+		margin: $event-card-margin;
+		height: $event-card-height;
+	    display: flex;
+	    flex-flow: row wrap;
+	    justify-content: flex-start;
+	    align-items: center;
+	    padding-top: 10px;
+    	padding-bottom: 10px;
+		font-size: 16px;
+    	color: $cinza2;
+    	width: 97%;
+
+		&.activated{
+			@extend .cancel-border;
+			@include box-shadow($event-card-shadow-click);
+			background-color: $event-card-background;
+		}
+	}
+
+	i {
+		font-size: 24pt;
+	    color: $laranja;
+	    margin-right: 20px;
+	    max-width: $event-card-height !important;
+	    max-height: $event-card-height !important;
+	}
+
+	p {
+		font-size: 15px;
+		white-space: normal;
+  		text-align: left;
+	}
+
+	h3 {
+		color: #8c8f91;
+	    font-size: 13px;
+	    text-transform: uppercase;
+	    font-weight: normal;
+	    margin: 50% auto;
+   		text-align: center;
+   		font-weight: bold;
+	    letter-spacing: 1px;
+	}
+}

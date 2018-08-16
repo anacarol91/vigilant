@@ -1,0 +1,20 @@
+<ion-view view-title="NOTIFICAÇÕES" id="notification">
+  <ion-content>
+
+  <ion-list id="card-list" ng-show="notifications !== null">
+      <a class="card item item-avatar-left tappable" type="item-text-wrap" ng-repeat="i in notifications" href="#/app/infracao?id={{i.id}}">
+    	<img  src="img/warning.png"/>
+    	<p>{{i.title}}</p>
+      </a>
+  </ion-list>
+
+    <div id="empty" ng-show="notifications === null">
+     <i class="icon icon-not ion-alert-circled"></i>
+      <h3>Nenhuma notificação</h3>
+      <p>Você será notificado caso seu veículo seja denuciado</p>
+    </div>
+
+    <button ng-hide="notifications === null" class="button button-block cancel-button" ng-click="notifications = null">Limpar</button>
+
+  </ion-content>
+</ion-view>

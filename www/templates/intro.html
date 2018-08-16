@@ -1,0 +1,31 @@
+<ion-slide-box id="sliderBox" on-slide-changed="slideHasChanged($index)" does-continue="false" auto-play="false" effect="fade">
+  <ion-slide>
+    <div class="slider-content">
+        <img class="slider-img" src="img/bell.png">
+        <p class="slider-text"><span style="color: #36aad0; font-size: 18px">Cadastre sua placa </span><br> e receba notificações se seu veículo for denunciado</p>
+    </div>
+    <button class="button button-block cancel-button pular" ng-click="home()">PULAR</button>
+  </ion-slide>
+
+  <ion-slide>
+    <div class="slider-content">
+        <img class="slider-img" src="img/warning.png">
+        <p class="slider-text"><span style="color: #ff7f00; font-size: 18px">Denuncie um veículo mal estacionado</span><br> sua denúncia sempre será anônima</p>
+    </div>
+    <button class="button button-block cancel-button pular" ng-click="home()">PULAR</button>
+  </ion-slide>
+
+  <ion-slide>
+    <div class="slider-content">
+        <img class="slider-img" src="img/teamwork.png">
+        <p class="slider-text"><span style="color: #007f7f; font-size: 18px">Contribua para melhorar o trânsito</span><br>de sua cidade!</p>
+
+        <div class="slider-button">
+          <button class="button button-block button-positive" ng-click="home()">Ir para o app</button>
+        </div>
+    </div>
+
+
+  </ion-slide>
+</ion-slide-box>
+

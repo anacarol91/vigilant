@@ -1,0 +1,33 @@
+ <ion-view view-title="Home" ng-controller="MapCtrl" id="mapa"  hide-back-button="true">
+	<ion-nav-title align-title="center" class="logo">
+	  VIGILANT
+	</ion-nav-title>
+	<ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+        <button class="button button-icon button-clear notification-icon ion-android-notifications-none" ng-click="notifications()">
+        </button>
+    </ion-nav-buttons>
+
+    <button id="fab" class="button button-positive button-fab button-fab-bottom-right" ng-click="openDenuncia()">
+        <i class="icon ion-alert-circled"></i>
+    </button>
+
+ 	<ion-content scroll="false">
+
+ 	  <div class="address" ng-click="openSearch()">
+ 	    <span>VOCÊ ESTÁ AQUI:</span>
+        <span class="address-text" style="width:95%">
+          <p class="truncate-text" style="margin: 0;" ng-if="endereco">{{endereco}}</p>
+          <p class="truncate-text" style="margin: 0;" ng-if="!endereco">CEFET-MG - Campus II</p>
+        </span>
+        <i class="icon ion-ios-mic mic-icon"></i>
+      </div>
+
+	  <map on-create="mapCreated(map)"></map>
+
+	  <button class="button button-fab ink-dark fab-location icon ion-android-locate" ng-click="centerOnMe()"></button>
+	</ion-content>
+</ion-view>

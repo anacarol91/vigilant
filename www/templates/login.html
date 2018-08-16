@@ -1,0 +1,25 @@
+<ion-view view-title="LOG IN" id="login">
+
+  <ion-content class="padding">
+    <form name="loginForm" ng-submit="doLogin()" novalidate>
+      <div class="list">
+        <label class="item item-input item-floating-label">
+            <span class="input-label">E-mail</span>
+            <input type="email" placeholder="E-mail" name="email" ng-model="loginData.email" required>
+        </label>
+
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Senha</span>
+            <input type="password" placeholder="Senha" ng-model="loginData.password" ng-minlength="3" ng-maxlength="10" required>
+        </label>
+        <button class="button button-block login-button" ng-disable="loginForm.email.$invalid" type="submit">Entrar</button>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="col-center" style="margin: 0 auto">
+        <button class="button button-block alt-flux-button password-button" ng-click="showForgot()">Esqueci minha senha</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
